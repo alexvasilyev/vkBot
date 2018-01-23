@@ -23,6 +23,9 @@
     "doctrine/lexer": {
         "version": "v1.0.1"
     },
+    "easycorp/easy-deploy-bundle": {
+        "version": "v1.0.2"
+    },
     "psr/cache": {
         "version": "1.0.1"
     },
@@ -69,6 +72,9 @@
         "version": "v4.0.3"
     },
     "symfony/event-dispatcher": {
+        "version": "v4.0.3"
+    },
+    "symfony/expression-language": {
         "version": "v4.0.3"
     },
     "symfony/filesystem": {
