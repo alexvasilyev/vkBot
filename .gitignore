@@ -1,3 +1,4 @@
+app/config/deploy_beta.php
 
 ###> symfony/framework-bundle ###
 .env
