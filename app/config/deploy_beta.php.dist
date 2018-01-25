@@ -1,0 +1,19 @@
+<?php
+use EasyCorp\Bundle\EasyDeployBundle\Deployer\DefaultDeployer;
+
+return new class extends DefaultDeployer
+{
+    public function configure()
+    {
+        /** @var \EasyCorp\Bundle\EasyDeployBundle\Configuration\DefaultConfiguration $configBuilder */
+        $configBuilder = $this->getConfigBuilder();
+        return $configBuilder
+            ->server('ssh_connection_see_ssh_config_file')
+            ->deployDir('/path/to/deploy')
+            ->repositoryUrl('git@github.com:alexvasilyev/vkBot.git')
+            ->repositoryBranch('BRANCH')
+            ->sharedFilesAndDirs([])
+            ->webDir('public')
+            ;
+    }
+};
