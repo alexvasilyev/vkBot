@@ -13,6 +13,6 @@ class MainController extends Controller
      */
     public function index()
     {
-        return new Response('Welcome to your new controller!');
+        return new Response('b21de22c');
     }
 }
