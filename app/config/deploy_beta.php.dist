@@ -12,7 +12,9 @@ return new class extends DefaultDeployer
             ->deployDir('/path/to/deploy')
             ->repositoryUrl('git@github.com:alexvasilyev/vkBot.git')
             ->repositoryBranch('BRANCH')
-            ->sharedFilesAndDirs([])
+            ->sharedFilesAndDirs([
+                'var/log',
+            ])
             ->webDir('public')
             ;
     }
