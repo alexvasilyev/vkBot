@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Psr\Log\LoggerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,8 +15,9 @@ class MainController extends Controller
     /**
      * @Route("/main", name="main")
      */
-    public function index(Request $request)
+    public function index(Request $request, LoggerInterface $logger)
     {
+        $logger->log(100, 'TEST LOG');
         //Ключ доступа сообщества
         $token = 'b4eaa1d7b864626130169665508ba90ba63f22ce23501d8dfe02207766f9f359d9dc22273a132ac176a1b';
 
@@ -27,8 +29,10 @@ class MainController extends Controller
 
         // проверяем secretKey
         if (0 !== strcmp($data->secret, $secretKey) && 0 !== strcmp($data->type, 'confirmation')) {
-            return;
+            return new Response('');
         }
+
+        $logger->log(100, $data->type);
 
         //Проверяем, что находится в поле "type"
         switch ($data->type) {
@@ -97,5 +101,7 @@ class MainController extends Controller
 
                 break;
         }
+
+        return new Response('');
     }
 }
